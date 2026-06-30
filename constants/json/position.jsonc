@@ -11,8 +11,8 @@
         
         "control_bar": {
             "scale": 0.300, // A singular value representative of the "Control" attribute
-            "tap_speed": 0.05, // Distance traveled per tap of the fishing rod bar, as a proportion of the lure bar
-            "fall_speed": 0.10 // Speed at which the bar moves left per second, as a proportion of the lure bar
+            "tap_speed": 0.500, // Distance traveled per second of the fishing rod bar being held, as a proportion of the lure bar
+            "fall_speed": 0.100 // Speed at which the bar moves left per second, as a proportion of the lure bar
         }
     },
     
