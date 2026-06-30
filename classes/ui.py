@@ -55,6 +55,47 @@ class ControlBar(LureBar):
         # Variable that estimates the center x value of the control bar
         self.cont_bar_loc = self.cont_bar_bounds["min"] + (self.cont_bar_len / 2)
 
+    def hover(self):
+        """Keep the bar, on average, in the same location for one tap."""
+        # Calculating the time that the code should sleep in order to return to the original state
+        sleep = self.cont_bar_speed / self.cont_bar_fall_speed
+
+        self.click()
+        time.sleep(sleep)
+    
+    def move(self, x: int):
+        """
+        Move the bar to a specified x value on the lure bar, relative to the center
+        of the lure bar.
+
+        Code will run until the control bar centers on the pixel.
+        """
+        
+        pixel = (x, self.lure_bar_loc["y"])
+
+        if self.color_at_pixel(self.cont_bar_color, pixel):
+            # TODO: Remember to offset the pixel in main.py for the fish bar cause ts will never execute otherwise
+            return
+        
+        ## Actual code
+        vector_pixel = self.cont_bar_loc - x
+        is_above = vector_pixel > 0
+
+        if is_above: # Pixel is to the left of the bar
+            tap_time = round(abs(vector_pixel) / self.cont_bar_speed)
+            self.click(tap_time)
+
+        if not is_above: # Pixel is to the right of the bar
+            fall_time = round(abs(vector_pixel) / self.cont_bar_fall_speed)
+            time.sleep(fall_time)
+
+        self.cont_bar_loc = x
+
+        
+
+        
+
+
 
 
 
