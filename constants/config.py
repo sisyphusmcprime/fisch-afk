@@ -14,10 +14,12 @@ def init_pos(run_path):
         global pos_consts
         pos_consts = json.load(pos_json)
 
+
 def init_color(run_path):
     with open(f"{run_path}/constants/json/colors.jsonc") as color_json:
         global color_consts
         color_consts = json.load(color_json)
+
 
 def init(run_path):
     init_pos(run_path)
