@@ -1,3 +1,4 @@
 {
-    "control_bar": "#F1F1F1"
+    "lure_bar": "#F1F1F1",
+    "prog_bar": "#FFFFFF"
 }
