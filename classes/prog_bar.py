@@ -1,8 +1,8 @@
 """
--- lure_bar.py --
+-- prog_bar.py --
 
-Class for the lure bar in the fishing minigame.
-Includes code for handling the lure bar and reeling in fish.
+Class for the progress bar in the fishing minigame.
+Includes code for checking if the progress bar is finished.
 
 """
 
