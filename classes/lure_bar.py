@@ -14,18 +14,18 @@ import time
 
 class LureBar(Window):
     def __init__(self):
-        self.lure_bar_prop = self.lure_bar_prop
+        self.lure_bar_props = cfg.pos_consts["lure_bar"]
 
         self.lure_bar_scale = {
-            "width": self.lure_bar_prop["scale"][0] * self.win_w,
-            "height": self.lure_bar_prop["scale"][1]
-            * self.lure_bar_prop["scale"][0]
+            "width": self.lure_bar_props["scale"][0] * self.win_w,
+            "height": self.lure_bar_props["scale"][1]
+            * self.lure_bar_props["scale"][0]
             * self.win_w,
         }
 
         self.lure_bar_loc = {
-            "x": self.lure_bar_prop["pos"][0] * self.win_x,
-            "y": self.lure_bar_prop["pos"][1] * self.win_y,
+            "x": self.lure_bar_props["pos"][0] * self.win_x,
+            "y": self.lure_bar_props["pos"][1] * self.win_y,
         }
 
     def scan(self, color: str, iterable: range) -> tuple[int, int]:
@@ -41,7 +41,7 @@ class LureBar(Window):
 
 class ControlBar(LureBar):
     def __init__(self):
-        self.cont_bar_prop = self.lure_bar_prop["control_bar"]
+        self.cont_bar_props = self.lure_bar_props["control_bar"]
 
         self.cont_bar_bounds = (
             {  # Bounds of the lure bar. TODO: Remember to consider the outside margin.
@@ -50,11 +50,11 @@ class ControlBar(LureBar):
             }
         )
 
-        self.cont_bar_speed = self.cont_bar_prop["speed"]
-        self.cont_bar_fall_speed = self.cont_bar_prop["fall_speed"]
+        self.cont_bar_speed = self.cont_bar_props["speed"]
+        self.cont_bar_fall_speed = self.cont_bar_props["fall_speed"]
 
         self.cont_bar_color = cfg.color_consts["control_bar"]
-        self.cont_bar_len = self.cont_bar_prop["scale"]
+        self.cont_bar_len = self.cont_bar_props["scale"] * self.lure_bar_scale["width"]
 
         # Variable that estimates the center x value of the control bar
         self.cont_bar_loc = self.cont_bar_bounds["min"] + (self.cont_bar_len / 2)

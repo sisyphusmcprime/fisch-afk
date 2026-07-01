@@ -16,13 +16,15 @@ class ProgressBar(Window):
     def __init__(self):
         self.prog_bar_props = cfg.pos_consts["prog_bar"]
 
-        self.prog_bar_pos = {
-            "x": self.prog_bar_props["pos"][0],
-            "y": self.prog_bar_props["pos"][1],
-        }
         self.prog_bar_scale = {
-            "width": self.prog_bar_props["scale"][0],
-            "height": self.prog_bar_props["scale"][1],
+            "width": self.prog_bar_props["scale"][0] * self.win_w,
+            "height": self.prog_bar_props["scale"][1]
+            * self.prog_bar_props["scale"][0]
+            * self.win_w,
+        }
+        self.prog_bar_pos = {
+            "x": self.prog_bar_props["pos"][0] * self.win_x,
+            "y": self.prog_bar_props["pos"][1] * self.win_y,
         }
 
         self.prog_bar_color = cfg.color_consts["prog_bar"]

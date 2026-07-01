@@ -14,18 +14,23 @@ class CastBar(Window):
     def __init__(self):
         self.cast_bar_props = cfg.pos_consts["cast_bar"]
 
-        self.cast_bar_pos = {
-            "x": self.cast_bar_props["pos"][0],
-            "y": self.cast_bar_props["pos"][1],
-        }
         self.cast_bar_scale = {
-            "width": self.cast_bar_props["scale"][0],
-            "height": self.cast_bar_props["scale"][1],
+            "width": self.cast_bar_props["scale"][0] * self.win_w,
+            "height": self.cast_bar_props["scale"][1]
+            * self.cast_bar_props["scale"][0] 
+            * self.win_h,
         }
 
         self.zone_scale = {
-            "width": self.cast_bar_props["zone"]["scale"][0],
-            "height": self.cast_bar_props["zone"]["scale"][1],
+            "width": self.cast_bar_props["zone"]["scale"][0] * self.win_w,
+            "height": self.cast_bar_props["zone"]["scale"][1]
+            * self.cast_bar_props["zone"]["scale"][0] 
+            * self.win_w,
+        }
+
+        self.cast_bar_pos = {
+            "x": self.cast_bar_props["pos"][0] * self.win_x,
+            "y": self.cast_bar_props["pos"][1] * self.win_y,
         }
 
         self.cast_bar_color = cfg.color_consts["cast_bar"]
