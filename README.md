@@ -14,7 +14,7 @@ pip install -r requirements.txt
 python3 main.py
 ```
 
-Details on cloning a repo can be found (here)[https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository]
+Details on cloning a repo can be found [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
 Keep in mind that this code is **currently under development**, hence main.py may crash or even not work. 
 
