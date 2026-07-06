@@ -1,0 +1,33 @@
+//
+// -- position.jsonc --
+//
+// Location of all consts for easy access. All values are proportions of the Roblox window, unless specified otherwise.
+//
+
+{
+    "lure_bar": {
+        "pos": [0.500, 0.852],
+        "scale": [0.406, 0.041], // The height is a proportion of the width due to how the lure bar scales
+        
+        "control_bar": {
+            "scale": 0.300, // A singular value representative of the "Control" attribute
+            "tap_speed": 0.500, // Distance traveled per second of the fishing rod bar being held, as a proportion of the lure bar
+            "fall_speed": 0.100 // Speed at which the bar moves left per second, as a proportion of the lure bar
+        }
+    },
+    
+    "prog_bar": {
+        "pos": [0.500, 0.906],
+        "scale": [0.219, 0.024] // The height is a proportion of the width due to how the progress bar scales.
+    },
+
+    "cast_bar": {
+        "pos": [0.588, 0.418], 
+        "scale": [0.008, 18.333], // The height is a proportion of the width due to how the cast bar scales.
+
+        "zone": {
+            "scale": [0.008, 0.014]
+        }
+    }
+
+}

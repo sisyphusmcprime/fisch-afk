@@ -1,0 +1,6 @@
+{
+    "lure_bar": "#F1F1F1",
+    "prog_bar": "#FFFFFF",
+    "cast_bar": "#FEF3DF" // The "fill" color ([0]) is the color of the rightmost pixels of the bar, as the bar 
+                            // is a horizontal gradient.
+}
